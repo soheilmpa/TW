@@ -46,19 +46,29 @@ def shot_and_analyse(name):
    return counts
 
 
+
 def First_shot():
     print("######################################################\n")
-    input("open your desktop and ENTER")
+    input("   open your desktop and ENTER")
 
     main = shot_and_analyse("main.png")
 
-    print("######################################################\n")
-    input("now open trust wallet and ENTER")
+    print("\n######################################################\n")
+    input("   now open trust wallet and ENTER")
+    print("\n######################################################\n")
 
     return main
 
 
+
 def Check(main):
    now = shot_and_analyse("temp.png")
-   return now==main
+   # return now==main
+   return np.array_equal(now,main)
 
+
+
+
+# test
+if __name__ == "__main__" :
+   print('same') if Check(First_shot()) else print('different')
